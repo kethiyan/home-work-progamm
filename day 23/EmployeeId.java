@@ -4,7 +4,10 @@ class EmployeeId
 	public static void main(String[] args){
 		Scanner sc=new Scanner(System.in);
 		
-		int empId[]=new int[10];
+		
+		System.out.print("Enter no of the employee: ");
+		int length=sc.nextInt();
+		int empId[]=new int[length];
 		int count=0;
 		int choice;
 		
@@ -20,12 +23,23 @@ class EmployeeId
 			switch(choice){
 				
 				case 1:
+				
+					  if(count<length){
 				      System.out.print("Enter employee Id: ");
 				      empId[count]=sc.nextInt();
 					  
 					  count++;
 				      System.out.print("Enter employee Id added ");
+					  
+				      
+						  
+					  }else{
+				      System.out.print("Enter employee Id fully ");
+						  
+					  }
+					  
 				      break;
+					  
 					  
 				case 2:
 				      System.out.print("Enter employee Id  to remove: ");
@@ -45,7 +59,7 @@ class EmployeeId
 						System.out.println("remove employee id");
 						}
 				else{
-						System.out.println("remove employee id not found");
+						System.out.println(" employee id not found");
 					}
 					break;
 				case 3:
