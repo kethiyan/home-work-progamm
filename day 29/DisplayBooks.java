@@ -9,6 +9,7 @@ class DisplayBooks
 		if(sla.bookID==null)
 		{
 		System.out.println("NO BOOKS TO SHOW ");
+		System.out.println("NO BOOKS TO SHOW ");
 			return;
 		}
 		
