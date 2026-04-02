@@ -1,0 +1,29 @@
+CREATE TABLE customers (
+    customer_id INT PRIMARY KEY,
+    customer_name VARCHAR(100),
+    city VARCHAR(100)
+);
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    amount DECIMAL(10,2)
+);
+
+select* from customers
+select* from orders
+
+INSERT INTO customers (customer_id, customer_name, city) VALUES 
+(1, 'Raja', 'Chennai'), 
+(2, 'Priya', 'Madurai'), 
+(3, 'Karthik', 'Coimbatore');
+
+INSERT INTO orders (order_id, customer_id, amount) VALUES 
+(101, 1, 6000), 
+(102, 2, 4000), 
+(103, 3, 8000), 
+(104, 1, 4500);
+
+
+SELECT o.order_id, c.customer_name, c.city, o.amount FROM  orders o
+INNER JOIN customers c ON o.customer_id = c.customer_id
+WHERE  o.amount > 5000;
