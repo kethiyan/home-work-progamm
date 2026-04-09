@@ -1,10 +1,11 @@
+
 CREATE TABLE department (
-    dept_id INT PRIMARY KEY,
+    dept_id INT ,
     dept_name VARCHAR(50),
     location VARCHAR(50)
 );
 
-INSERT INTO department (dept_id, dept_name, location) VALUES
+INSERT INTO department VALUES
 (10, 'IT', 'Chennai'),
 (20, 'HR', 'Bangalore'),
 (30, 'Sales', 'Mumbai'),
