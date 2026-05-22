@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kethiyan Keral Mark A – Portfolio</title>
+    <link rel="stylesheet" href="demo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="navbar">
+        <div class="logo">KK<span>.</span>AK</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home"     onclick="closeMenu()">Home</a></li>
+            <li><a href="#about"    onclick="closeMenu()">Why Me / About</a></li>
+            <li><a href="#skills"   onclick="closeMenu()">Skills</a></li>
+            <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+            <li><a href="#contact"  onclick="closeMenu()">Hire Me</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section id="home">
+        <div class="hero-left">
+            <h1>
+                KETHIYAN<br>
+                <span>KERAL MARK</span>
+            </h1>
+            <div class="hero-role">Java Developer & Security Enthusiast</div>
+            <p class="hero-desc">
+                "Building Secure, Scalable Software Applications That Turn Complex Business Needs Into Safe Growth Opportunities." High-performance backend engineering combined with modern, secure frontend designs.
+            </p>
+            <div class="hero-btns">
+                <a href="resume.pdf" class="btn-primary" download>Download Resume</a>
+                <a href="#contact" class="btn-secondary">Hire Me Now</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num">10+</span>
+                    <span class="stat-label">Projects Built</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">AI</span>
+                    <span class="stat-label">Integrated</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">Full</span>
+                    <span class="stat-label">Stack Ready</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">2026</span>
+                    <span class="stat-label">Security Focus</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="avatar-wrap">
+                <div class="avatar-ring"></div>
+                <div class="avatar-inner">
+                    <img src="Gemini_Generated_Image_owrrnhowrrnhowrr.png" alt="Kethiyan Keral Mark">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section-wrap">
+        <div class="section-head reveal">
+            <span class="section-num">01.</span>
+            <h2 class="section-title">Why Me & Philosophy</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="about-grid">
+            <div class="why-me-highlight reveal from-left">
+                <h3 class="why-title">Why Hire Me?</h3>
+                <ul class="why-list">
+                    <li>
+                        <span class="icon">🔒</span>
+                        <div><strong>Security-First Mindset:</strong> I don't just write code; I write secure code. My background in Cyber Security means vulnerability checks and safe data handling are built-in from day one.</div>
+                    </li>
+                    <li>
+                        <span class="icon">⚙️</span>
+                        <div><strong>Robust Backend Logic:</strong> Specializing in Java and Spring Boot, I build systems that scale gracefully under pressure, not just prototypes that break.</div>
+                    </li>
+                    <li>
+                        <span class="icon">🧠</span>
+                        <div><strong>AI-Ready Developer:</strong> Experience integrating OpenAI APIs and crafting intelligent backend systems that bring next-gen capabilities to standard applications.</div>
+                    </li>
+                    <li>
+                        <span class="icon">🤝</span>
+                        <div><strong>Business Aligned:</strong> I understand that software must solve real business problems. I focus on clean architecture and delivering value, not just chasing tech trends.</div>
+                    </li>
+                </ul>
+                <div class="why-links">
+                    <a href="https://github.com/kethiyan/home-work-progamm" target="_blank" class="why-link-btn">GitHub Projects</a>
+                    <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" class="why-link-btn">LinkedIn Profile</a>
+                </div>
+            </div>
+            <div class="about-text-box reveal from-right">
+                <p>I am a passionate <strong>Cyber Security Engineer</strong> and <strong>Java Full Stack Developer</strong> based in Madurai, India. For me, software engineering isn't just about writing thousands of lines of code; it's about robust application architecture, domain security, and business stability.</p>
+                <p>Following a strict pre-development analysis workflow, I ensure that data validation, role-based access controls, and optimal logic paths are integrated into the system layout right from the initial wireframe stage.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section-wrap unique-skills-bg">
+        <div class="skills-header reveal">
+            <p class="mini-title">TECH ARSENAL</p>
+            <h1>Skills & <span>Technologies</span></h1>
+            <p class="skills-text">Across frontend development, heavy backend architecture, AI implementation, and defensive cybersecurity strategies.</p>
+        </div>
+        <div class="skill-tabs reveal">
+            <button class="tab active" onclick="filterSkills('frontend', this)">Frontend</button>
+            <button class="tab" onclick="filterSkills('backend', this)">Backend</button>
+            <button class="tab" onclick="filterSkills('ai', this)">AI & Automation</button>
+            <button class="tab" onclick="filterSkills('security', this)">Cyber Security</button>
+            <button class="tab" onclick="filterSkills('all', this)">All Skills</button>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card" data-category="frontend">
+                <div class="skill-icon"><img src="icons8-html-5-48.png" alt="HTML5"></div>
+                <h3>HTML5</h3>
+                <p>Semantic structuring and accessibility for web applications.</p>
+            </div>
+            <div class="skill-card" data-category="frontend">
+                <div class="skill-icon"><img src="icons8-css-100.png" alt="CSS3"></div>
+                <h3>CSS3</h3>
+                <p>Responsive design, modern layouts, and fluid animations.</p>
+            </div>
+            <div class="skill-card" data-category="frontend">
+                <div class="skill-icon"><img src="icons8-figma-48.png" alt="Figma"></div>
+                <h3>Figma UI/UX</h3>
+                <p>Wireframing, prototyping, and modern system UI design.</p>
+            </div>
+            <div class="skill-card" data-category="frontend">
+                <div class="skill-icon">⚛️</div>
+                <h3>React.js</h3>
+                <p>Component-based frontend architecture and state management.</p>
+            </div>
+            <div class="skill-card" data-category="backend">
+                <div class="skill-icon">☕</div>
+                <h3>Java</h3>
+                <p>Core backend logic, OOP, and high-performance applications.</p>
+            </div>
+            <div class="skill-card" data-category="backend">
+                <div class="skill-icon">🍃</div>
+                <h3>Spring Boot</h3>
+                <p>RESTful APIs, security layers, and microservices architecture.</p>
+            </div>
+            <div class="skill-card" data-category="backend">
+                <div class="skill-icon">🐬</div>
+                <h3>MySQL</h3>
+                <p>Relational database management, querying, and schema design.</p>
+            </div>
+            <div class="skill-card" data-category="backend">
+                <div class="skill-icon">🐘</div>
+                <h3>PostgreSQL</h3>
+                <p>Advanced relational databases, JSON data, and complex joins.</p>
+            </div>
+            <div class="skill-card" data-category="security">
+                <div class="learning-badge">Learning</div>
+                <div class="skill-icon">🛡️</div>
+                <h3>Cyber Security</h3>
+                <p>JWT Authentication / Vulnerability Analysis</p>
+            </div>
+            <div class="skill-card" data-category="ai">
+                <div class="learning-badge">Learning</div>
+                <div class="skill-icon">🤖</div>
+                <h3>AI Integration</h3>
+                <p>OpenAI API / Prompt Engineering / LLM Deployment</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section-wrap">
+        <div class="section-head reveal">
+            <span class="section-num">02.</span>
+            <h2 class="section-title">Projects That Solve Real Problems</h2>
+            <div class="section-line"></div>
+        </div>
+        <p class="section-intro-text reveal">Not just basic tutorials. Real systems engineered with complex business logic, production-ready security patterns, and scalable architectures.</p>
+
+        <div class="projects-case-grid">
+            <div class="project-case-card reveal">
+                <div class="project-header-meta">
+                    <span class="project-case-tag">AI Integration & Full Stack</span>
+                </div>
+                <h3 class="project-case-title">Intelligent Chatbot AI System</h3>
+                <p class="project-case-brief">A highly production-ready conversational assistant powered by OpenAI APIs, completely secured by Spring Boot Backend structures.</p>
+                <div class="project-problem-solution">
+                    <div class="p-box"><strong>⚠️ The Problem:</strong> Most chatbots lack backend architecture, easily leaking API keys and exposing session vulnerabilities on the client side.</div>
+                    <div class="s-box"><strong>✅ The Solution:</strong> Built a full-stack layer with a custom JWT-secured Java Spring Boot REST API, ensuring safe data validation before delivering responses to the UI.</div>
+                </div>
+                <div class="project-tech-badges">
+                    <span>Spring Boot</span><span>Java</span><span>OpenAI API</span><span>JWT Security</span><span>Docker</span>
+                </div>
+            </div>
+
+            <div class="project-case-card reveal">
+                <div class="project-header-meta">
+                    <span class="project-case-tag">Security Engineering</span>
+                </div>
+                <h3 class="project-case-title">Secure Password Engine & Analyzer</h3>
+                <p class="project-case-brief">Cryptographically sound credential generation suite with real-time entropy estimation and local database storage.</p>
+                <div class="project-problem-solution">
+                    <div class="p-box"><strong>⚠️ The Problem:</strong> Standard applications use predictable math functions for passwords, leaving them highly vulnerable to dictionary and brute-force attacks.</div>
+                    <div class="s-box"><strong>✅ The Solution:</strong> Implemented cryptographically secure pseudo-random number generators (CSPRNG) in Java, alongside advanced entropy pattern checking.</div>
+                </div>
+                <div class="project-tech-badges">
+                    <span>Java</span><span>Cryptography</span><span>SQL / MySQL</span><span>System Analysis</span>
+                </div>
+            </div>
+
+            <div class="project-case-card reveal">
+                <div class="project-header-meta">
+                    <span class="project-case-tag">Desktop Application · Java Full Stack</span>
+                </div>
+                <h3 class="project-case-title">FiberNet System Application</h3>
+                <p class="project-case-brief">A full-featured desktop application to manage fiber optic network operations — customer accounts, connection requests, billing, service plans, and technician field assignments.</p>
+                <div class="project-problem-solution">
+                    <div class="p-box"><strong>⚠️ The Problem:</strong> Fiber ISPs rely on manual spreadsheets to manage customer connections, service plans, and fault tracking — leading to billing errors and slow field response times.</div>
+                    <div class="s-box"><strong>✅ The Solution:</strong> Engineered a structured JavaFX desktop system with FXML-based Scene Builder UI, JDBC-backed MySQL data layer, and role-based modules for Admin, Technician, and Customer management.</div>
+                </div>
+                <span class="feat-label">Key Features</span>
+                <div class="feat-chips-wrap">
+                    <span class="feat-chip">📋 Customer Management</span>
+                    <span class="feat-chip">💡 Connection Plan Allocation</span>
+                    <span class="feat-chip">💳 Billing & Invoice Engine</span>
+                    <span class="feat-chip">🛠️ Technician Assignment</span>
+                    <span class="feat-chip">📊 Service Status Dashboard</span>
+                    <span class="feat-chip">🔒 Role-Based Access Control</span>
+                </div>
+                <div class="project-tech-badges">
+                    <span>Java</span><span>JavaFX</span><span>Scene Builder (FXML)</span><span>MySQL / JDBC</span><span>MVC Architecture</span><span>OOP Design Patterns</span>
+                </div>
+            </div>
+
+            <div class="coming-soon-card reveal">
+                <span class="cs-icon">🚀</span>
+                <div class="cs-badge">
+                    <span class="cs-pulse"></span>
+                    Currently In Development
+                </div>
+                <h3 class="cs-title">More Projects Coming Soon</h3>
+                <p class="cs-desc">New projects are actively being engineered — covering Spring Boot microservices, AI-powered tools, cybersecurity dashboards, and more real-world Java full stack systems. Stay tuned.</p>
+                <div class="cs-tech-hints">
+                    <span>Spring Microservices</span>
+                    <span>AI / ML Integration</span>
+                    <span>Security Dashboard</span>
+                    <span>Cloud Deployment</span>
+                    <span>React + Java</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section-wrap">
+        <div class="section-head reveal">
+            <span class="section-num">03.</span>
+            <h2 class="section-title">Hire Me & Connect</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="hire-banner reveal">
+            <h3>Ready to scale your backend or secure your application?</h3>
+            <p>I am actively seeking full-time roles and challenging projects. Let's build something robust together.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info-panel reveal from-left">
+                <p class="contact-desc-text">Available for full-stack engineering roles, AI implementations, and defensive cybersecurity architecture design.</p>
+                <div class="contact-item">
+                    <span class="c-label">Direct Communication Email:</span>
+                    <span class="c-value">kithiyonkeralmark@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="c-label">Current Location:</span>
+                    <span class="c-value">Madurai, Tamil Nadu, India</span>
+                </div>
+                <div class="contact-item">
+                    <span class="c-label">WhatsApp:</span>
+                    <a href="https://wa.me/916383610633" target="_blank" class="c-value whatsapp-link">
+                        +91 6383610633 &nbsp;💬 Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="contact-form-wrap reveal from-right">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="form-name" class="form-input" placeholder="Your Name or Company" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="form-email" class="form-input" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="form-message" class="form-textarea" placeholder="Details about the role or project..." required></textarea>
+                    </div>
+                    <button type="button" class="btn-primary" id="send-btn" onclick="sendForm()" style="width:100%; text-align:center; font-size:18px; padding:18px;">
+                        📧 Send Job Inquiry
+                    </button>
+                    <p id="form-status" style="text-align:center; font-size:14px; margin-top:8px; color:var(--cyan); display:none;"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>© 2026 Designed & Engineered By <span>Kethiyan Keral Mark A</span>. Built with Spring Boot, Cyber Theme & AI Patterns.</p>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+
+        // ── SEND FORM — Gmail Quick Fix ───────────────────────────────
+        function sendForm() {
+            const name    = document.getElementById('form-name').value.trim();
+            const email   = document.getElementById('form-email').value.trim();
+            const message = document.getElementById('form-message').value.trim();
+            const status  = document.getElementById('form-status');
+
+            if (!name || !email || !message) {
+                alert('Please fill in all fields before sending.');
+                return;
+            }
+
+            const subject = encodeURIComponent('Job Inquiry from ' + name);
+            const body    = encodeURIComponent(
+                'Name: ' + name + '\n' +
+                'Email: ' + email + '\n\n' +
+                'Message:\n' + message
+            );
+
+            const link = document.createElement('a');
+            link.href   = 'https://mail.google.com/mail/?view=cm&fs=1&to=kithiyonkeralmark@gmail.com&su=' + subject + '&body=' + body;
+            link.target = '_blank';
+            link.rel    = 'noopener';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            status.textContent = '✅ Gmail tab opened! Review and click Send.';
+            status.style.color = 'var(--cyan)';
+            status.style.display = 'block';
+
+            document.getElementById('form-name').value    = '';
+            document.getElementById('form-email').value   = '';
+            document.getElementById('form-message').value = '';
+
+            setTimeout(() => { status.style.display = 'none'; }, 6000);
+        }
+
+        // ── SKILL TAB FILTER ──────────────────────────────────────────
+        function filterSkills(category, element) {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            if (element) element.classList.add('active');
+            document.querySelectorAll('.skill-card').forEach(card => {
+                const match = category === 'all' || card.getAttribute('data-category') === category;
+                if (match) {
+                    card.style.display = 'flex';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 20);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.85)';
+                    setTimeout(() => { card.style.display = 'none'; }, 300);
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.skill-card').forEach(card => {
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
+            });
+            filterSkills('frontend', document.querySelector('.tab'));
+        });
+
+        // ── MOBILE HAMBURGER ──────────────────────────────────────────
+        function toggleMenu() {
+            document.getElementById('nav-links').classList.toggle('nav-open');
+            document.getElementById('hamburger').classList.toggle('ham-open');
+        }
+        function closeMenu() {
+            document.getElementById('nav-links').classList.remove('nav-open');
+            document.getElementById('hamburger').classList.remove('ham-open');
+        }
+        document.addEventListener('click', function(e) {
+            const nav    = document.getElementById('nav-links');
+            const burger = document.getElementById('hamburger');
+            if (nav.classList.contains('nav-open') && !nav.contains(e.target) && !burger.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        // ── NAVBAR SCROLL SHRINK ──────────────────────────────────────
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('nav-scrolled', window.scrollY > 60);
+        });
+
+        // ── NAVBAR ACTIVE HIGHLIGHT ON SCROLL ────────────────────────
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('nav-active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('nav-active');
+                }
+            });
+        });
+
+        // ── SCROLL REVEAL ─────────────────────────────────────────────
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    </script>
+</body>
+</html>

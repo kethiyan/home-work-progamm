@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/25"
+            fx:controller="signup.SignUpController"
+            style="-fx-background-color: #0a1628;">
+    <center>
+        <VBox alignment="CENTER"
+              style="-fx-padding: 50; -fx-spacing: 15; -fx-pref-width: 450;">
+            <HBox style="-fx-spacing: 5; -fx-alignment: center;">
+                <Label text="Fiber" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                <Label text="Net" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #00bcd4;"/>
+            </HBox>
+            <Label text="Create Your Account"
+                   style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <VBox style="-fx-spacing: 5;">
+                <Label text="USER NAME" style="-fx-font-size: 11; -fx-text-fill: #8899aa;"/>
+                <TextField fx:id="fullName" promptText="Enter your full name"
+                           style="-fx-background-color: #0d1f3c; -fx-text-fill: white; -fx-border-color: #1a3a5c; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 12 15; -fx-prompt-text-fill: #445566;"/>
+            </VBox>
+            <VBox style="-fx-spacing: 5;">
+                <Label text="MOBILE NUMBER" style="-fx-font-size: 11; -fx-text-fill: #8899aa;"/>
+                <TextField fx:id="mobile" promptText="Enter 10-digit mobile number"
+                           style="-fx-background-color: #0d1f3c; -fx-text-fill: white; -fx-border-color: #1a3a5c; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 12 15; -fx-prompt-text-fill: #445566;"/>
+            </VBox>
+            <VBox style="-fx-spacing: 5;">
+                <Label text="EMAIL ID" style="-fx-font-size: 11; -fx-text-fill: #8899aa;"/>
+                <TextField fx:id="email" promptText="Enter your email address"
+                           style="-fx-background-color: #0d1f3c; -fx-text-fill: white; -fx-border-color: #1a3a5c; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 12 15; -fx-prompt-text-fill: #445566;"/>
+            </VBox>
+            <VBox style="-fx-spacing: 5;">
+                <Label text="SET PASSWORD" style="-fx-font-size: 11; -fx-text-fill: #8899aa;"/>
+                <PasswordField fx:id="password" promptText="Min. 8 characters"
+                              style="-fx-background-color: #0d1f3c; -fx-text-fill: white; -fx-border-color: #1a3a5c; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 12 15; -fx-prompt-text-fill: #445566;"/>
+            </VBox>
+            <VBox style="-fx-spacing: 5;">
+                <Label text="CONFIRM PASSWORD" style="-fx-font-size: 11; -fx-text-fill: #8899aa;"/>
+                <PasswordField fx:id="confirmPassword" promptText="Re-enter password"
+                              style="-fx-background-color: #0d1f3c; -fx-text-fill: white; -fx-border-color: #1a3a5c; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 12 15; -fx-prompt-text-fill: #445566;"/>
+            </VBox>
+            <Label fx:id="errorLabel" text="" style="-fx-text-fill: #ff5555;" visible="false"/>
+            <Button text="SIGN UP" onAction="#signUp" maxWidth="Infinity"
+                    style="-fx-background-color: #00bcd4; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14; -fx-padding: 12; -fx-background-radius: 8; -fx-cursor: hand;"/>
+            <HBox alignment="CENTER" style="-fx-spacing: 5;">
+                <Label text="Already have an account?" style="-fx-text-fill: #8899aa; -fx-font-size: 12;"/>
+                <Label text="Login" onMouseClicked="#goToLogin"
+                       style="-fx-text-fill: #00bcd4; -fx-font-size: 12; -fx-cursor: hand;"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Responsive Form</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
+
+        body{
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 50px;
+        }
+
+        .container{
+
+            width: 500px;
+            max-width: 100%;
+
+            background-color: white;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            box-shadow: 10px 10px 28px rgb(179, 29, 29);
+        }
+
+        h1{
+            text-align: center;
+            color: darkblue;
+            margin-bottom: 30px;
+            font-size: 40px;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+
+        label{
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .star{
+            color: red;
+        }
+
+        input{
+
+            width: 100%;
+
+            padding: 15px;
+
+            border: 1px solid gray;
+
+            border-radius: 10px;
+
+            font-size: 18px;
+        }
+
+        button{
+
+            margin-top: 30px;
+
+            padding: 15px;
+
+            background-color: blue;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 10px;
+
+            font-size: 20px;
+
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: darkblue;
+        }
+
+        /* Mobile Responsive */
+
+        @media screen and (max-width: 768px){
+
+            .container{
+
+                width: 100%;
+
+                padding: 25px;
+            }
+
+            h1{
+                font-size: 30px;
+            }
+
+            label{
+                font-size: 18px;
+            }
+
+            input{
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            button{
+                font-size: 18px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Student Registration</h1>
+
+        <form>
+
+            <label>
+                Student Name
+                <span class="star">*</span>
+            </label>
+
+            <input type="text"
+                   placeholder="Enter your name"
+                   required>
+
+            <label>
+                Email
+                <span class="star">*</span>
+            </label>
+
+            <input type="email"
+                   placeholder="Enter your email"
+                   required>
+
+            <label>
+                Password
+                <span class="star">*</span>
+            </label>
+
+            <input type="password"
+                   placeholder="Enter your password"
+                   required>
+
+            <label>
+                College Name
+                <span class="star">*</span>
+            </label>
+
+            <input type="text"
+                    placeholder="ABC Engineering College"
+                    required>
+
+            <button type="submit">
+                Register
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

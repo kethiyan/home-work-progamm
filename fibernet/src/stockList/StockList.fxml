@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="stockList.StockListController"
+            style="-fx-background-color: #0a1628;">
+    <top>
+        <HBox style="-fx-background-color: #0d1f3c;
+                     -fx-padding: 12 25; -fx-spacing: 15;
+                     -fx-alignment: center-left;">
+            <Label text="Fiber"
+                   style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label text="Net"
+                   style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #00bcd4;"/>
+            <Label HBox.hgrow="ALWAYS"/>
+            <Button text="← Back" onAction="#goBack"
+                    style="-fx-background-color: #1a3a5c; -fx-text-fill: white;
+                           -fx-padding: 8 15; -fx-background-radius: 8; -fx-cursor: hand;"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox style="-fx-padding: 30; -fx-spacing: 20; -fx-background-color: #0a1628;">
+
+            <HBox style="-fx-alignment: center-left; -fx-spacing: 15;">
+                <VBox>
+                    <Label text="Stock List"
+                           style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="View and manage inventory"
+                           style="-fx-font-size: 13; -fx-text-fill: #8899aa;"/>
+                </VBox>
+            </HBox>
+
+            <!-- Stats -->
+            <HBox style="-fx-spacing: 15;">
+                <VBox style="-fx-background-color: #0d1f3c; -fx-padding: 15;
+                             -fx-background-radius: 10; -fx-alignment: center;"
+                      HBox.hgrow="ALWAYS">
+                    <Label text="TOTAL ITEMS"
+                           style="-fx-font-size: 11; -fx-text-fill: #8899aa;"/>
+                    <Label fx:id="totalItems" text="0"
+                           style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                </VBox>
+                <VBox style="-fx-background-color: #0d1f3c; -fx-padding: 15;
+                             -fx-background-radius: 10; -fx-alignment: center;"
+                      HBox.hgrow="ALWAYS">
+                    <Label text="IN STOCK"
+                           style="-fx-font-size: 11; -fx-text-fill: #8899aa;"/>
+                    <Label fx:id="inStockCount" text="0"
+                           style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #00cc88;"/>
+                </VBox>
+                <VBox style="-fx-background-color: #0d1f3c; -fx-padding: 15;
+                             -fx-background-radius: 10; -fx-alignment: center;"
+                      HBox.hgrow="ALWAYS">
+                    <Label text="LOW STOCK"
+                           style="-fx-font-size: 11; -fx-text-fill: #8899aa;"/>
+                    <Label fx:id="lowStockCount" text="0"
+                           style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #ffa500;"/>
+                </VBox>
+                <VBox style="-fx-background-color: #0d1f3c; -fx-padding: 15;
+                             -fx-background-radius: 10; -fx-alignment: center;"
+                      HBox.hgrow="ALWAYS">
+                    <Label text="OUT OF STOCK"
+                           style="-fx-font-size: 11; -fx-text-fill: #8899aa;"/>
+                    <Label fx:id="outStockCount" text="0"
+                           style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #ff5555;"/>
+                </VBox>
+            </HBox>
+
+            <!-- Search + Filters -->
+            <HBox style="-fx-spacing: 10; -fx-alignment: center-left;">
+                <TextField fx:id="searchField" promptText="Search item or category..."
+                           style="-fx-background-color: #0d1f3c; -fx-text-fill: white;
+                                  -fx-border-color: #1a3a5c; -fx-border-radius: 8;
+                                  -fx-background-radius: 8; -fx-padding: 8 15;
+                                  -fx-pref-width: 250; -fx-prompt-text-fill: #445566;"/>
+                <ComboBox fx:id="categoryFilter" promptText="Category"
+                          style="-fx-background-color: #0d1f3c; -fx-border-color: #1a3a5c;
+                                 -fx-border-radius: 8;"/>
+                <ComboBox fx:id="statusFilter" promptText="Status"
+                          style="-fx-background-color: #0d1f3c; -fx-border-color: #1a3a5c;
+                                 -fx-border-radius: 8;"/>
+                <Label HBox.hgrow="ALWAYS"/>
+                <Button text="Refresh" onAction="#refreshData"
+                        style="-fx-background-color: #1a3a5c; -fx-text-fill: white;
+                               -fx-padding: 8 15; -fx-background-radius: 8; -fx-cursor: hand;"/>
+                <Button text="Add Stock" onAction="#addStock"
+                        style="-fx-background-color: #00cc88; -fx-text-fill: white;
+                               -fx-padding: 8 15; -fx-background-radius: 8; -fx-cursor: hand;"/>
+                <Button text="Export" onAction="#exportData"
+                        style="-fx-background-color: #00bcd4; -fx-text-fill: white;
+                               -fx-padding: 8 15; -fx-background-radius: 8; -fx-cursor: hand;"/>
+            </HBox>
+
+            <!-- Table -->
+            <TableView fx:id="stockTable" VBox.vgrow="ALWAYS"
+                       style="-fx-background-color: #0d1f3c; -fx-border-color: transparent;">
+                <columns>
+                    <TableColumn fx:id="colItemId" text="ITEM ID" prefWidth="90"/>
+                    <TableColumn fx:id="colItemName" text="ITEM NAME" prefWidth="200"/>
+                    <TableColumn fx:id="colCategory" text="CATEGORY" prefWidth="150"/>
+                    <TableColumn fx:id="colQuantity" text="QTY" prefWidth="70"/>
+                    <TableColumn fx:id="colUnit" text="UNIT" prefWidth="80"/>
+                    <TableColumn fx:id="colStatus" text="STATUS" prefWidth="110"/>
+                    <TableColumn fx:id="colLastUpdated" text="LAST UPDATED" prefWidth="130"/>
+                </columns>
+                <placeholder>
+                    <Label text="No stock data available"
+                           style="-fx-text-fill: #8899aa; -fx-font-size: 14;"/>
+                </placeholder>
+            </TableView>
+
+        </VBox>
+    </center>
+</BorderPane>

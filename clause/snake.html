@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Simple Snake Game</title>
+
+    <style>
+
+        body{
+            margin:0;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            background:black;
+            overflow:hidden;
+        }
+
+        .game{
+            width:600px;
+            height:120px;
+            border:3px solid white;
+            position:relative;
+            overflow:hidden;
+            background:#111;
+        }
+
+        /* Snake */
+
+        .snake{
+            width:60px;
+            height:20px;
+            background:lime;
+            border-radius:10px;
+            position:absolute;
+            left:20px;
+            bottom:20px;
+            cursor: -moz-zoom-out;
+
+            animation:moveSnake 6s linear infinite;
+        }
+
+        /* Food */
+
+        .food{
+            width:20px;
+            height:20px;
+            background:red;
+            border-radius:50%;
+            position:absolute;
+            right:50px;
+            bottom:20px;
+
+            animation:blink 0.5s infinite alternate;
+        }
+
+        /* Snake Movement */
+
+        @keyframes moveSnake{
+
+            0%{
+                left:20px;
+            }
+
+            50%{
+                left:500px;
+            }
+
+            100%{
+                left:20px;
+            }
+        }
+
+        /* Food Animation */
+
+        @keyframes blink{
+
+            from{
+                transform:scale(1);
+            }
+
+            to{
+                transform:scale(1.3);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="game">
+
+        <div class="snake"></div>
+
+        <div class="food"></div>
+
+    </div>
+
+</body>
+</html>

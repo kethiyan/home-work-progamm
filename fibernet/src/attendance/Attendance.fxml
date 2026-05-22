@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="attendance.AttendanceController"
+            style="-fx-background-color: #0a1628;">
+    <top>
+        <HBox style="-fx-background-color: #0d1f3c;
+                     -fx-padding: 12 25; -fx-spacing: 15;
+                     -fx-alignment: center-left;">
+            <Label text="Fiber"
+                   style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label text="Net"
+                   style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #00bcd4;"/>
+            <Label HBox.hgrow="ALWAYS"/>
+            <Button text="← Back" onAction="#goBack"
+                    style="-fx-background-color: #1a3a5c; -fx-text-fill: white;
+                           -fx-padding: 8 15; -fx-background-radius: 8; -fx-cursor: hand;"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox style="-fx-padding: 30; -fx-spacing: 20; -fx-background-color: #0a1628;">
+
+            <HBox style="-fx-alignment: center-left; -fx-spacing: 15;">
+                <VBox>
+                    <Label text="Attendance"
+                           style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="Mark and track employee attendance"
+                           style="-fx-font-size: 13; -fx-text-fill: #8899aa;"/>
+                </VBox>
+                <Label HBox.hgrow="ALWAYS"/>
+                <DatePicker fx:id="datePicker" onAction="#changeDate"
+                            style="-fx-background-color: #0d1f3c;
+                                   -fx-border-color: #1a3a5c;
+                                   -fx-border-radius: 8; -fx-background-radius: 8;"/>
+            </HBox>
+
+            <!-- Stats -->
+            <HBox style="-fx-spacing: 15;">
+                <VBox style="-fx-background-color: #0d1f3c; -fx-padding: 15;
+                             -fx-background-radius: 10; -fx-alignment: center;"
+                      HBox.hgrow="ALWAYS">
+                    <Label text="TOTAL STAFF"
+                           style="-fx-font-size: 11; -fx-text-fill: #8899aa;"/>
+                    <Label fx:id="totalLabel" text="6"
+                           style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                </VBox>
+                <VBox style="-fx-background-color: #0d1f3c; -fx-padding: 15;
+                             -fx-background-radius: 10; -fx-alignment: center;"
+                      HBox.hgrow="ALWAYS">
+                    <Label text="PRESENT"
+                           style="-fx-font-size: 11; -fx-text-fill: #8899aa;"/>
+                    <Label fx:id="presentLabel" text="0"
+                           style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #00cc88;"/>
+                </VBox>
+                <VBox style="-fx-background-color: #0d1f3c; -fx-padding: 15;
+                             -fx-background-radius: 10; -fx-alignment: center;"
+                      HBox.hgrow="ALWAYS">
+                    <Label text="ABSENT"
+                           style="-fx-font-size: 11; -fx-text-fill: #8899aa;"/>
+                    <Label fx:id="absentLabel" text="0"
+                           style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #ff5555;"/>
+                </VBox>
+                <VBox style="-fx-background-color: #0d1f3c; -fx-padding: 15;
+                             -fx-background-radius: 10; -fx-alignment: center;"
+                      HBox.hgrow="ALWAYS">
+                    <Label text="ON LEAVE"
+                           style="-fx-font-size: 11; -fx-text-fill: #8899aa;"/>
+                    <Label fx:id="leaveLabel" text="0"
+                           style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #ffa500;"/>
+                </VBox>
+            </HBox>
+
+            <!-- Search + Buttons -->
+            <HBox style="-fx-spacing: 10; -fx-alignment: center-left;">
+                <TextField fx:id="searchField" promptText="Search employee..."
+                           style="-fx-background-color: #0d1f3c; -fx-text-fill: white;
+                                  -fx-border-color: #1a3a5c; -fx-border-radius: 8;
+                                  -fx-background-radius: 8; -fx-padding: 8 15;
+                                  -fx-pref-width: 250; -fx-prompt-text-fill: #445566;"/>
+                <Label HBox.hgrow="ALWAYS"/>
+                <Button text="All Present" onAction="#markAllPresent"
+                        style="-fx-background-color: #00cc88; -fx-text-fill: white;
+                               -fx-padding: 8 15; -fx-background-radius: 8; -fx-cursor: hand;"/>
+                <Button text="Save" onAction="#saveAttendance"
+                        style="-fx-background-color: #00bcd4; -fx-text-fill: white;
+                               -fx-padding: 8 15; -fx-background-radius: 8; -fx-cursor: hand;"/>
+            </HBox>
+
+            <!-- Table -->
+            <TableView fx:id="attendanceTable" VBox.vgrow="ALWAYS"
+                       style="-fx-background-color: #0d1f3c; -fx-border-color: transparent;">
+                <columns>
+                    <TableColumn fx:id="colName" text="EMPLOYEE" prefWidth="180"/>
+                    <TableColumn fx:id="colDept" text="DEPARTMENT" prefWidth="140"/>
+                    <TableColumn fx:id="colEmpCode" text="EMP CODE" prefWidth="100"/>
+                    <TableColumn fx:id="colStatus" text="STATUS" prefWidth="80"/>
+                    <TableColumn fx:id="colNote" text="NOTE" prefWidth="150"/>
+                    <TableColumn fx:id="colTime" text="TIME IN" prefWidth="100"/>
+                </columns>
+                <placeholder>
+                    <Label text="No employee data"
+                           style="-fx-text-fill: #8899aa; -fx-font-size: 14;"/>
+                </placeholder>
+            </TableView>
+
+        </VBox>
+    </center>
+</BorderPane>

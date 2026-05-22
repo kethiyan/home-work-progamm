@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title> Student Scholarship Registration</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(to right,#2193b0,#6dd5ed);
+    padding:2rem;
+}
+
+.star{
+    color:rgb(178, 38, 38);
+}
+.container{
+    width:85%;
+    max-width:850px;
+    background:white;
+    padding:2rem;
+    border-radius:20px;
+    box-shadow:10px 15px 15px rgb(245, 4, 4);
+}
+
+.main-title{
+    text-align:center;
+    color:#0d47a1;
+    margin-bottom:2rem;
+    font-size:2rem;
+}
+
+.form-box{
+    border:2px solid #ddd;
+    border-radius:15px;
+    padding:1.5rem;
+    margin-bottom:2rem;
+}
+
+.form-box h2{
+    color:#1565c0;
+    margin-bottom:1rem;
+}
+
+label{
+    font-weight:bold;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:0.9rem;
+    margin-top:0.5rem;
+    margin-bottom:1rem;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:1rem;
+}
+
+button{
+    width:100%;
+    padding:1rem;
+    border:none;
+    border-radius:10px;
+    background:#1565c0;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#0d47a1;
+    transform:scale(1.02);
+}
+
+.hidden-text{
+    color:red;
+    text-align:center;
+    margin-top:10px;
+}
+
+@media(max-width:768px){
+
+    .container{
+        width:100%;
+        padding:1rem;
+    }
+
+    .main-title{
+        font-size:1.5rem;
+    }
+
+    input,
+    select,
+    textarea{
+        font-size:0.9rem;
+    }
+
+    body{
+        background:#e3f2fd;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="main-title">
+  Student Scholarship Registration
+</h1>
+
+<!-- Student Registration -->
+
+<div class="form-box">
+
+<h2>Student Registration</h2>
+
+<label>Student Name <span class="star"  > *</span></label>
+<input type="text" placeholder="Enter your name" required>
+
+<label>Email </label>
+<span class="star">*</span>
+<input type="email" placeholder="Enter your email" required>
+
+<label>Password </label>
+
+<input type="password" placeholder="Enter your password" required>
+
+<label>College Name</label>
+<input type="text" placeholder="ABC Engineering College" >
+
+<label>Phone Number</label>
+<input type="tel" placeholder="Enter phone number">
+
+<label>Address</label>
+<textarea placeholder="Enter your address"></textarea>
+
+<button>Register Student</button>
+
+
+
+</div>
+
+<!-- Scholarship Registration -->
+
+<div class="form-box">
+
+<h2>Scholarship Registration</h2>
+
+<label>Scholarship Type</label>
+<select required>
+    <option>Select Scholarship</option>
+    <option>Merit Scholarship</option>
+    <option>Sports Scholarship</option>
+    <option>Government Scholarship</option>
+</select>
+
+<label>Annual Income</label>
+<input type="number" placeholder="Enter annual income">
+
+<label>Community</label>
+<input type="text" placeholder="Enter community">
+
+<label>Marks Percentage</label>
+<input type="number" placeholder="Enter percentage">
+
+<label>Upload Documents</label>
+<input type="file">
+
+<button>Apply Scholarship</button>
+
+</div>
+
+</div>
+
+</body>
+</html>

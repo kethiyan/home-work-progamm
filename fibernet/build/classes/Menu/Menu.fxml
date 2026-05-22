@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.MenuController">
+
+    <left>
+        <VBox fx:id="sidebarVBox" style="-fx-background-color: white; -fx-padding: 15; -fx-spacing: 5; -fx-pref-width: 280;">
+
+            <!-- Search Bar -->
+            <HBox style="-fx-background-color: #f0f0f0; -fx-background-radius: 20; -fx-padding: 8 15 8 15; -fx-spacing: 10; -fx-alignment: center-left;">
+                <TextField fx:id="searchField" promptText="Search" style="-fx-background-color: transparent; -fx-border-color: transparent;" HBox.hgrow="ALWAYS" />
+            </HBox>
+
+            <!-- Customer Management Header -->
+            <HBox fx:id="customerMgmtBox" onMouseClicked="#toggleCustomerMenu" style="-fx-padding: 10 5 5 5; -fx-spacing: 10; -fx-alignment: center-left; -fx-cursor: hand;">
+                <Label style="-fx-font-size: 13; -fx-font-weight: bold;" text="Customer management" HBox.hgrow="ALWAYS" />
+                <Label fx:id="customerMgmtArrow" style="-fx-font-size: 11; -fx-text-fill: #555555;" text="▼" />
+            </HBox>
+
+            <!-- Customer Sub Menu -->
+            <VBox fx:id="customerSubMenu" style="-fx-spacing: 3;">
+
+                <HBox fx:id="billDetailBox" style="-fx-padding: 8 10 8 25; -fx-spacing: 10; -fx-alignment: center-left; -fx-cursor: hand;">
+                    <Rectangle fill="transparent" height="18" stroke="#555555" strokeDashArray="4" strokeWidth="1.5" width="18" />
+               <Hyperlink onAction="#billDetail" text="bill detail" />
+                </HBox>
+
+                <HBox fx:id="statusOnlineBox" style="-fx-padding: 8 10 8 25; -fx-spacing: 10; -fx-alignment: center-left; -fx-cursor: hand;">
+                    <Rectangle fill="transparent" height="18" stroke="#2196F3" strokeDashArray="4" strokeWidth="1.5" width="18" />
+               <Hyperlink onAction="#statusOnline" prefHeight="23.0" prefWidth="84.0" text="status online" />
+                </HBox>
+
+                <HBox fx:id="newRequestBox" style="-fx-padding: 8 10 8 25; -fx-spacing: 10; -fx-alignment: center-left; -fx-cursor: hand;">
+                    <Rectangle fill="transparent" height="18" stroke="#2196F3" strokeDashArray="4" strokeWidth="1.5" width="18" />
+               <Hyperlink onAction="#newRequest" prefHeight="23.0" prefWidth="92.0" text="new request" />
+                </HBox>
+
+                <HBox fx:id="approvalRequestBox" style="-fx-padding: 8 10 8 25; -fx-spacing: 10; -fx-alignment: center-left; -fx-cursor: hand;">
+                    <Rectangle fill="transparent" height="18" stroke="#555555" strokeDashArray="4" strokeWidth="1.5" width="18" />
+               <Hyperlink onAction="#approvalRequest" prefHeight="23.0" prefWidth="116.0" text="approval request" />
+                </HBox>
+
+            </VBox>
+
+            <!-- Attendance Header -->
+            <HBox fx:id="attendanceBox" onMouseClicked="#toggleAttendanceMenu" style="-fx-padding: 15 5 5 5; -fx-spacing: 10; -fx-alignment: center-left; -fx-cursor: hand;">
+                <Label prefHeight="19.0" prefWidth="116.0" style="-fx-font-size: 13; -fx-text-fill: #555555;" text=" check list" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Arial Narrow Bold" size="13.0" />
+               </font></Label>
+            <Label fx:id="customerMgmtArrow1" style="-fx-font-size: 11; -fx-text-fill: #555555;" text="▼" />
+            </HBox>
+
+            <!-- Attendance Sub Menu -->
+            <VBox fx:id="attendanceSubMenu" style="-fx-spacing: 3;">
+
+                <HBox fx:id="stockListBox" style="-fx-padding: 8 10 8 25; -fx-spacing: 10; -fx-alignment: center-left; -fx-cursor: hand;">
+                    <Rectangle fill="transparent" height="18" stroke="#555555" strokeDashArray="4" strokeWidth="1.5" width="18" />
+               <Hyperlink onAction="#stockList" text="stock list" />
+                </HBox>
+
+                <HBox fx:id="requestStockBox" style="-fx-padding: 8 10 8 25; -fx-spacing: 10; -fx-alignment: center-left; -fx-cursor: hand;">
+                    <Rectangle fill="transparent" height="18" stroke="#555555" strokeDashArray="4" strokeWidth="1.5" width="18" />
+               <Hyperlink onAction="#requestStock" prefHeight="23.0" prefWidth="98.0" text="request stock" />
+                </HBox>
+
+                <HBox fx:id="attendanceItemBox" style="-fx-padding: 8 10 8 25; -fx-spacing: 10; -fx-alignment: center-left; -fx-cursor: hand;">
+                    <Rectangle fill="transparent" height="18" stroke="#555555" strokeDashArray="4" strokeWidth="1.5" width="18" />
+               <Hyperlink onAction="#Attendance" prefHeight="23.0" prefWidth="94.0" text="Attendance" />
+                </HBox>
+
+            </VBox>
+
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane style="-fx-background-color: #0a1628;">
+            <LineChart fx:id="revenueChart" legendVisible="false" style="-fx-background-color: transparent;">
+                <xAxis>
+                    <CategoryAxis side="BOTTOM" />
+                </xAxis>
+                <yAxis>
+                    <NumberAxis side="LEFT" />
+                </yAxis>
+            </LineChart>
+        </StackPane>
+    </center>
+
+</BorderPane>

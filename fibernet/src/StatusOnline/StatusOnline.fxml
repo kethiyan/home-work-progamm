@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="StatusOnline.StatusOnlineController"
+            style="-fx-background-color: #0a1628;">
+
+    <!-- Top Header -->
+    <top>
+        <HBox style="-fx-background-color: #0d1f3c;
+                     -fx-padding: 15 25;
+                     -fx-spacing: 15;
+                     -fx-alignment: center-left;">
+            <Label text="Fiber"
+                   style="-fx-font-size: 20;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: white;"/>
+            <Label text="Net"
+                   style="-fx-font-size: 20;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #00bcd4;"/>
+            <Label text="BUSINESS"
+                   style="-fx-font-size: 10;
+                          -fx-text-fill: #00bcd4;"/>
+            <Label HBox.hgrow="ALWAYS"/>
+            <Label text="Network Status"
+                   style="-fx-font-size: 14;
+                          -fx-text-fill: #8899aa;"/>
+            <Button text="← Back to Menu"
+                    onAction="#goBack"
+                    style="-fx-background-color: #1a3a5c;
+                           -fx-text-fill: white;
+                           -fx-padding: 8 15;
+                           -fx-background-radius: 8;
+                           -fx-cursor: hand;"/>
+        </HBox>
+    </top>
+
+    <!-- Main Content -->
+    <center>
+        <ScrollPane fitToWidth="true"
+                    style="-fx-background-color: #0a1628;
+                           -fx-background: #0a1628;">
+            <content>
+                <VBox style="-fx-padding: 30;
+                             -fx-spacing: 20;
+                             -fx-background-color: #0a1628;">
+
+                    <!-- Page Title -->
+                    <HBox style="-fx-alignment: center-left;
+                                 -fx-spacing: 15;">
+                        <VBox>
+                            <Label text="Status Online"
+                                   style="-fx-font-size: 24;
+                                          -fx-font-weight: bold;
+                                          -fx-text-fill: white;"/>
+                            <Label text="Real-time customer connection status"
+                                   style="-fx-font-size: 13;
+                                          -fx-text-fill: #8899aa;"/>
+                        </VBox>
+                        <Label HBox.hgrow="ALWAYS"/>
+                        <Button text="🔄 Refresh"
+                                onAction="#refreshData"
+                                style="-fx-background-color: #00bcd4;
+                                       -fx-text-fill: white;
+                                       -fx-padding: 8 15;
+                                       -fx-background-radius: 8;
+                                       -fx-cursor: hand;"/>
+                    </HBox>
+
+                    <!-- Stats Cards -->
+                    <HBox style="-fx-spacing: 15;">
+
+                        <!-- Total -->
+                        <VBox style="-fx-background-color: #0d1f3c;
+                                     -fx-padding: 20;
+                                     -fx-spacing: 8;
+                                     -fx-background-radius: 12;"
+                              HBox.hgrow="ALWAYS">
+                            <Label text="TOTAL USERS"
+                                   style="-fx-font-size: 11;
+                                          -fx-text-fill: #8899aa;"/>
+                            <Label fx:id="totalLabel" text="0"
+                                   style="-fx-font-size: 30;
+                                          -fx-font-weight: bold;
+                                          -fx-text-fill: white;"/>
+                            <Label text="Registered customers"
+                                   style="-fx-font-size: 11;
+                                          -fx-text-fill: #8899aa;"/>
+                        </VBox>
+
+                        <!-- Online -->
+                        <VBox style="-fx-background-color: #0d1f3c;
+                                     -fx-padding: 20;
+                                     -fx-spacing: 8;
+                                     -fx-background-radius: 12;"
+                              HBox.hgrow="ALWAYS">
+                            <Label text="ONLINE"
+                                   style="-fx-font-size: 11;
+                                          -fx-text-fill: #8899aa;"/>
+                            <Label fx:id="onlineLabel" text="0"
+                                   style="-fx-font-size: 30;
+                                          -fx-font-weight: bold;
+                                          -fx-text-fill: #00cc88;"/>
+                            <Label text="Active connections"
+                                   style="-fx-font-size: 11;
+                                          -fx-text-fill: #8899aa;"/>
+                        </VBox>
+
+                        <!-- Offline -->
+                        <VBox style="-fx-background-color: #0d1f3c;
+                                     -fx-padding: 20;
+                                     -fx-spacing: 8;
+                                     -fx-background-radius: 12;"
+                              HBox.hgrow="ALWAYS">
+                            <Label text="OFFLINE"
+                                   style="-fx-font-size: 11;
+                                          -fx-text-fill: #8899aa;"/>
+                            <Label fx:id="offlineLabel" text="0"
+                                   style="-fx-font-size: 30;
+                                          -fx-font-weight: bold;
+                                          -fx-text-fill: #ff5555;"/>
+                            <Label text="Inactive connections"
+                                   style="-fx-font-size: 11;
+                                          -fx-text-fill: #8899aa;"/>
+                        </VBox>
+
+                        <!-- Suspended -->
+                        <VBox style="-fx-background-color: #0d1f3c;
+                                     -fx-padding: 20;
+                                     -fx-spacing: 8;
+                                     -fx-background-radius: 12;"
+                              HBox.hgrow="ALWAYS">
+                            <Label text="SUSPENDED"
+                                   style="-fx-font-size: 11;
+                                          -fx-text-fill: #8899aa;"/>
+                            <Label fx:id="suspendedLabel" text="0"
+                                   style="-fx-font-size: 30;
+                                          -fx-font-weight: bold;
+                                          -fx-text-fill: #ffa500;"/>
+                            <Label text="Suspended accounts"
+                                   style="-fx-font-size: 11;
+                                          -fx-text-fill: #8899aa;"/>
+                        </VBox>
+
+                    </HBox>
+
+                    <!-- Search + Filter -->
+                    <HBox style="-fx-spacing: 10;
+                                 -fx-alignment: center-left;">
+                        <TextField fx:id="searchField"
+                                   promptText="Search User ID, Name..."
+                                   style="-fx-background-color: #0d1f3c;
+                                          -fx-text-fill: white;
+                                          -fx-border-color: #1a3a5c;
+                                          -fx-border-radius: 8;
+                                          -fx-background-radius: 8;
+                                          -fx-padding: 8 15;
+                                          -fx-pref-width: 280;
+                                          -fx-prompt-text-fill: #445566;"/>
+                        <ComboBox fx:id="statusFilter"
+                                  promptText="Filter Status"
+                                  style="-fx-background-color: #0d1f3c;
+                                         -fx-border-color: #1a3a5c;
+                                         -fx-border-radius: 8;
+                                         -fx-background-radius: 8;"/>
+                        <Label HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="lastUpdated"
+                               text="Last updated: --"
+                               style="-fx-text-fill: #445566;
+                                      -fx-font-size: 11;"/>
+                    </HBox>
+
+                    <!-- Status Table -->
+                    <VBox style="-fx-background-color: #0d1f3c;
+                                 -fx-background-radius: 12;
+                                 -fx-padding: 5;">
+                        <TableView fx:id="statusTable"
+                                   prefHeight="420"
+                                   style="-fx-background-color: transparent;
+                                          -fx-border-color: transparent;">
+                            <columns>
+                                <TableColumn fx:id="colUserId"
+                                             text="USER ID"
+                                             prefWidth="120"/>
+                                <TableColumn fx:id="colName"
+                                             text="NAME"
+                                             prefWidth="180"/>
+                                <TableColumn fx:id="colPlan"
+                                             text="PLAN"
+                                             prefWidth="150"/>
+                                <TableColumn fx:id="colStatus"
+                                             text="STATUS"
+                                             prefWidth="120"/>
+                                <TableColumn fx:id="colLastSeen"
+                                             text="LAST SEEN"
+                                             prefWidth="160"/>
+                                <TableColumn fx:id="colIp"
+                                             text="IP ADDRESS"
+                                             prefWidth="130"/>
+                            </columns>
+                            <placeholder>
+                                <Label text="No data found"
+                                       style="-fx-text-fill: #8899aa;
+                                              -fx-font-size: 14;"/>
+                            </placeholder>
+                        </TableView>
+                    </VBox>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

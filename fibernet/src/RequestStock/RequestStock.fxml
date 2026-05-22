@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/21"
+            fx:controller="RequestStock.RequestStockController"
+            style="-fx-background-color: #f5f5f5;">
+
+    <top>
+        <HBox style="-fx-background-color: #0a1628; -fx-padding: 15 20; -fx-alignment: center-left; -fx-spacing: 15;">
+            <Button text="← Back" onAction="#goBack"
+                    style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 13; -fx-cursor: hand;"/>
+            <Label text="Request Stock" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: white;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox style="-fx-padding: 30; -fx-spacing: 20; -fx-max-width: 700; -fx-alignment: top-center;">
+            <Label text="New Stock Request" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+            <Label fx:id="msgLabel" text="" style="-fx-font-size: 13;" visible="false"/>
+
+            <HBox style="-fx-spacing: 15;">
+                <VBox HBox.hgrow="ALWAYS" style="-fx-spacing: 5;">
+                    <Label text="Item Name *"/>
+                    <TextField fx:id="itemName" promptText="e.g. Fiber Optic Cable"
+                               style="-fx-padding: 10; -fx-background-radius: 5; -fx-border-color: #ddd; -fx-border-radius: 5;"/>
+                </VBox>
+                <VBox HBox.hgrow="ALWAYS" style="-fx-spacing: 5;">
+                    <Label text="Category *"/>
+                    <ComboBox fx:id="category" maxWidth="Infinity"
+                              style="-fx-padding: 5; -fx-background-radius: 5;"/>
+                </VBox>
+            </HBox>
+
+            <HBox style="-fx-spacing: 15;">
+                <VBox HBox.hgrow="ALWAYS" style="-fx-spacing: 5;">
+                    <Label text="Quantity *"/>
+                    <TextField fx:id="quantity" promptText="e.g. 100"
+                               style="-fx-padding: 10; -fx-background-radius: 5; -fx-border-color: #ddd; -fx-border-radius: 5;"/>
+                </VBox>
+                <VBox HBox.hgrow="ALWAYS" style="-fx-spacing: 5;">
+                    <Label text="Unit"/>
+                    <ComboBox fx:id="unit" maxWidth="Infinity"
+                              style="-fx-padding: 5; -fx-background-radius: 5;"/>
+                </VBox>
+                <VBox HBox.hgrow="ALWAYS" style="-fx-spacing: 5;">
+                    <Label text="Priority"/>
+                    <ComboBox fx:id="priority" maxWidth="Infinity"
+                              style="-fx-padding: 5; -fx-background-radius: 5;"/>
+                </VBox>
+            </HBox>
+
+            <VBox style="-fx-spacing: 5;">
+                <Label text="Reason / Notes"/>
+                <TextArea fx:id="reason" promptText="Why do you need this stock?"
+                          prefRowCount="4"
+                          style="-fx-padding: 10; -fx-background-radius: 5; -fx-border-color: #ddd; -fx-border-radius: 5;"/>
+            </VBox>
+
+            <HBox style="-fx-spacing: 10; -fx-alignment: center-right;">
+                <Button text="Clear" onAction="#clearForm"
+                        style="-fx-background-color: #f0f0f0; -fx-padding: 10 25; -fx-background-radius: 5; -fx-cursor: hand;"/>
+                <Button text="Submit Request" onAction="#submitRequest"
+                        style="-fx-background-color: #00bcd4; -fx-text-fill: white; -fx-padding: 10 25; -fx-background-radius: 5; -fx-cursor: hand; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

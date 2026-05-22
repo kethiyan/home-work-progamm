@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/25"
+            fx:controller="fibernet.LoginController"
+            style="-fx-background-color: #0a1628;">
+
+    <center>
+        <HBox alignment="CENTER" style="-fx-background-color: #0a1628;">
+
+            <!-- Left Side - Branding -->
+            <VBox alignment="CENTER"
+                  style="-fx-background-color: #0d1f3c; -fx-padding: 60; -fx-spacing: 20; -fx-pref-width: 500; -fx-min-height: 600;">
+
+                <!-- Logo -->
+                <HBox alignment="CENTER_LEFT" style="-fx-spacing: 5;">
+                    <Label text="Fiber" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="Net" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #00bcd4;"/>
+                </HBox>
+                <Label text="BUSINESS"
+                       style="-fx-font-size: 11; -fx-text-fill: #00bcd4; -fx-letter-spacing: 3;"/>
+
+                <VBox style="-fx-spacing: 15; -fx-padding: 40 0 0 0;">
+                    <Label text="Connect Faster."
+                           style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="Grow Smarter."
+                           style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="Enterprise-grade fiber internet solutions&#10;for businesses of all sizes."
+                           style="-fx-font-size: 14; -fx-text-fill: #8899aa; -fx-line-spacing: 5;"/>
+                </VBox>
+
+                <!-- Features -->
+                <VBox style="-fx-spacing: 15; -fx-padding: 30 0 0 0;">
+                    <HBox style="-fx-spacing: 10; -fx-alignment: center-left;">
+                        <Label text="⚡" style="-fx-font-size: 16;"/>
+                        <VBox>
+                            <Label text="10 Gbps Dedicated Speed"
+                                   style="-fx-font-size: 13; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                            <Label text="Zero throttling, always-on performance"
+                                   style="-fx-font-size: 11; -fx-text-fill: #8899aa;"/>
+                        </VBox>
+                    </HBox>
+                    <HBox style="-fx-spacing: 10; -fx-alignment: center-left;">
+                        <Label text="🔒" style="-fx-font-size: 16;"/>
+                        <VBox>
+                            <Label text="99.9% Uptime SLA"
+                                   style="-fx-font-size: 13; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                            <Label text="Guaranteed reliability for your business"
+                                   style="-fx-font-size: 11; -fx-text-fill: #8899aa;"/>
+                        </VBox>
+                    </HBox>
+                    <HBox style="-fx-spacing: 10; -fx-alignment: center-left;">
+                        <Label text="🌐" style="-fx-font-size: 16;"/>
+                        <VBox>
+                            <Label text="24/7 Priority Support"
+                                   style="-fx-font-size: 13; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                            <Label text="Dedicated account manager included"
+                                   style="-fx-font-size: 11; -fx-text-fill: #8899aa;"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <!-- Badges -->
+                <HBox style="-fx-spacing: 15; -fx-padding: 40 0 0 0;">
+                    <Label text="ISO 27001"
+                           style="-fx-background-color: #1a2f4a; -fx-text-fill: #8899aa; -fx-padding: 5 10; -fx-background-radius: 5; -fx-font-size: 11;"/>
+                    <Label text="TRAI Cert."
+                           style="-fx-background-color: #1a2f4a; -fx-text-fill: #8899aa; -fx-padding: 5 10; -fx-background-radius: 5; -fx-font-size: 11;"/>
+                    <Label text="SSL Secured"
+                           style="-fx-background-color: #1a2f4a; -fx-text-fill: #8899aa; -fx-padding: 5 10; -fx-background-radius: 5; -fx-font-size: 11;"/>
+                </HBox>
+
+            </VBox>
+
+            <!-- Right Side - Login Form -->
+            <VBox alignment="CENTER"
+                  style="-fx-background-color: #0a1628; -fx-padding: 60; -fx-spacing: 20; -fx-pref-width: 450;">
+
+                <Label text="Sign in to your FiberNet Business account"
+                       style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white; -fx-wrap-text: true;"/>
+
+                <!-- Username -->
+                <VBox style="-fx-spacing: 5;">
+                    <Label text="USER ID OR EMAIL ADDRESS"
+                           style="-fx-font-size: 11; -fx-text-fill: #8899aa;"/>
+                    <TextField fx:id="username"
+                               promptText="user@company.com"
+                               style="-fx-background-color: #0d1f3c; -fx-text-fill: white; -fx-prompt-text-fill: #445566; -fx-border-color: #1a3a5c; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 12 15; -fx-font-size: 13;"/>
+                </VBox>
+
+                <!-- Password -->
+                <VBox style="-fx-spacing: 5;">
+                    <Label text="PASSWORD"
+                           style="-fx-font-size: 11; -fx-text-fill: #8899aa;"/>
+                    <PasswordField fx:id="password"
+                                  promptText="••••••••••••"
+                                  style="-fx-background-color: #0d1f3c; -fx-text-fill: white; -fx-prompt-text-fill: #445566; -fx-border-color: #1a3a5c; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 12 15; -fx-font-size: 13;"/>
+                </VBox>
+
+                <!-- Remember me -->
+                <HBox alignment="CENTER_LEFT" style="-fx-spacing: 10;">
+                    <CheckBox fx:id="rememberMe"
+                              style="-fx-text-fill: #8899aa; -fx-font-size: 12;"
+                              text="Remember me"/>
+                    <Label HBox.hgrow="ALWAYS"/>
+                    <Label text="Forgot Password?"
+                           style="-fx-text-fill: #00bcd4; -fx-font-size: 12; -fx-cursor: hand;"/>
+                </HBox>
+
+                <!-- Error Label -->
+                <Label fx:id="errorLabel"
+                       text=""
+                       style="-fx-text-fill: #ff5555; -fx-font-size: 12;"
+                       visible="false"/>
+
+                <!-- Login Button -->
+                <Button fx:id="loginBtn"
+                        text="LOGIN"
+                        onAction="#login"
+                        style="-fx-background-color: #00bcd4; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14; -fx-padding: 12; -fx-background-radius: 8; -fx-cursor: hand; -fx-pref-width: 330;"
+                        maxWidth="Infinity"/>
+
+                <!-- Divider -->
+                <HBox alignment="CENTER" style="-fx-spacing: 10;">
+                    <Line endX="120" stroke="#1a3a5c"/>
+                    <Label text="OR" style="-fx-text-fill: #445566; -fx-font-size: 12;"/>
+                    <Line endX="120" stroke="#1a3a5c"/>
+                </HBox>
+
+                <!-- Social Login -->
+                <Button text="🔵  Continue with Google"
+                        style="-fx-background-color: #0d1f3c; -fx-text-fill: white; -fx-font-size: 13; -fx-padding: 10; -fx-background-radius: 8; -fx-border-color: #1a3a5c; -fx-border-radius: 8; -fx-cursor: hand; -fx-pref-width: 330;"
+                        maxWidth="Infinity"/>
+
+                <Button text="🟦  Continue with Microsoft"
+                        style="-fx-background-color: #0d1f3c; -fx-text-fill: white; -fx-font-size: 13; -fx-padding: 10; -fx-background-radius: 8; -fx-border-color: #1a3a5c; -fx-border-radius: 8; -fx-cursor: hand; -fx-pref-width: 330;"
+                        maxWidth="Infinity"/>
+
+                <!-- Sign Up Link -->
+                <HBox alignment="CENTER" style="-fx-spacing: 5;">
+                    <Label text="Don't have an account?"
+                           style="-fx-text-fill: #8899aa; -fx-font-size: 12;"/>
+                    <Label text="Sign Up Free"
+                           onMouseClicked="#signup"
+                           style="-fx-text-fill: #00bcd4; -fx-font-size: 12; -fx-cursor: hand;"/>
+                </HBox>
+
+                <!-- Footer -->
+                <Label text="By signing in, you agree to our Terms of Service &amp; Privacy Policy"
+                       style="-fx-text-fill: #445566; -fx-font-size: 11; -fx-wrap-text: true; -fx-text-alignment: center;"
+                       maxWidth="330"/>
+
+            </VBox>
+
+        </HBox>
+    </center>
+
+</BorderPane>
