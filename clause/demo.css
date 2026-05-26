@@ -726,7 +726,7 @@ nav.nav-scrolled {
 .contact-item { margin-bottom: 25px; }
 .c-label {
     display: block;
-    font-size: 12px;
+    font-size: 19px;
     color: var(--pink);
     text-transform: uppercase;
     font-family: 'Space Mono', monospace;
