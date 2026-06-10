@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storage Demo</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 30px;
+        transition: 0.3s;
+    }
+
+    .dark{
+        background-color: #222;
+        color: white;
+    }
+
+    .light{
+        background-color: white;
+        color: black;
+    }
+
+    .box{
+        border: 1px solid gray;
+        padding: 20px;
+        margin: 20px auto;
+        width: 350px;
+        border-radius: 10px;
+    }
+
+    input,button{
+        padding: 8px;
+        margin: 5px;
+    }
+</style>
+</head>
+<body>
+
+<!-- Local Storage -->
+<div class="box">
+    <h2>Local Storage</h2>
+
+    <input type="text" id="nameInput" placeholder="Enter Name">
+
+    <button onclick="saveName()">Save</button>
+
+    <h3 id="displayName"></h3>
+</div>
+
+<!-- Session Storage -->
+<div class="box">
+    <h2>Session Storage Counter</h2>
+
+    <h3>Count: <span id="count">0</span></h3>
+
+    <button onclick="increaseCounter()">Click Me</button>
+</div>
+
+<!-- Cookies -->
+<div class="box">
+    <h2>Theme Preference (Cookies)</h2>
+
+    <button onclick="setTheme('light')">Light Theme</button>
+
+    <button onclick="setTheme('dark')">Dark Theme</button>
+</div>
+
+<script>
+
+/* =====================
+   LOCAL STORAGE
+===================== */
+
+function saveName(){
+    let name = document.getElementById("nameInput").value;
+
+    localStorage.setItem("username", name);
+
+    document.getElementById("displayName").innerText =
+    "Welcome " + name;
+}
+
+window.onload = function(){
+
+    let savedName = localStorage.getItem("username");
+
+    if(savedName){
+        document.getElementById("displayName").innerText =
+        "Welcome " + savedName;
+    }
+
+    loadCounter();
+    loadTheme();
+}
+
+
+/* =====================
+   SESSION STORAGE
+===================== */
+
+function loadCounter(){
+
+    let count = sessionStorage.getItem("counter") || 0;
+
+    document.getElementById("count").innerText = count;
+}
+
+function increaseCounter(){
+
+    let count = sessionStorage.getItem("counter") || 0;
+
+    count++;
+
+    sessionStorage.setItem("counter", count);
+
+    document.getElementById("count").innerText = count;
+}
+
+
+/* =====================
+   COOKIES
+===================== */
+
+function setTheme(theme){
+
+    document.cookie =
+    "theme=" + theme +
+    ";max-age=604800;path=/";
+
+    applyTheme(theme);
+}
+
+function applyTheme(theme){
+
+    document.body.className = theme;
+}
+
+function loadTheme(){
+
+    let cookieArray = document.cookie.split(";");
+
+    for(let cookie of cookieArray){
+
+        let c = cookie.trim();
+
+        if(c.startsWith("theme=")){
+
+            let theme = c.substring(6);
+
+            applyTheme(theme);
+        }
+    }
+}
+
+</script>
+
+</body>
+</html>

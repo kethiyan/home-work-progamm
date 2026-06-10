@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Same Pattern Animation Events</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        #change {
+            height: 150px;
+            width: 150px;
+            border: 4px solid #333;
+            border-radius: 10px;
+            background-color: white;
+            cursor: pointer;
+            transition: all all ease; 
+
+            /* 🔥 CSS Animation: 2 seconds-ku 'my-blink' animation nadakkum */
+            animation: my-blink 2s ease-in-out;
+        }
+
+        /* Box load aagum pothu vanthu pogum oru simple animation */
+        @keyframes my-blink {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.1); background-color: yellow; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="change"></div>
+ 
+    <script>
+        let p = document.getElementById("change");
+
+        // 1. Click, dblclick, mousedown, mouseup (Ungal athe sariyana pattern)
+        p.addEventListener("click", function orange() {
+            p.style.backgroundColor = "orange";
+        });
+
+        p.addEventListener("dblclick", function purple() {
+            p.style.backgroundColor = "purple";
+        });
+
+        p.addEventListener("arrowup", function circle() {
+            p.style.borderRadius = "50%";
+        });
+
+        p.addEventListener("arrowdoen", function square() {
+            p.style.borderRadius = "10px";
+        });
+
+
+        // 🔥 5. Animation Start Event (Page load aagi animation arambikkum pothu nadakkum)
+        p.addEventListener("animationstart", function start() {
+            // Animation start aagum pothu box-kul text varum
+            p.innerText = "Blinking...";
+            p.style.color = "black";
+            p.style.display = "flex";
+            p.style.justifyContent = "center";
+            p.style.alignItems = "center";
+            p.style.fontWeight = "bold";
+        });
+
+        // 🔥 6. Animation End Event (Animation muzhuvathaga mudindha pinbu nadakkum)
+        p.addEventListener("animationend", function end() {
+            // Animation mudindhavudan text-ai maatri border color-ai mathugirom
+            p.innerText = "Ready!";
+            p.style.borderColor = "#2ecc71"; // Green border
+        });
+
+    </script>
+</body>
+</html>

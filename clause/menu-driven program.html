@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu Program</title>
+</head>
+<body>
+
+<h2 id="text">Hello DOM</h2>
+
+<input type="number" id="num1" placeholder="First Number">
+<input type="number" id="num2" placeholder="Second Number">
+
+<br><br>
+
+<button onclick="readText()">Read Text</button>
+<button onclick="addNumbers()">Add Numbers</button>
+<button onclick="changeCSS()">Change CSS</button>
+<button onclick="exitProgram()">Exit</button>
+
+<p id="result"></p>
+
+<script>
+function readText() {
+    document.getElementById("result").innerHTML =
+        document.getElementById("text").innerHTML;
+}
+
+function addNumbers() {
+    let a = Number(document.getElementById("num1").value);
+    let b = Number(document.getElementById("num2").value);
+
+    document.getElementById("result").innerHTML =
+        "Sum = " + (a + b);
+}
+
+function changeCSS() {
+    document.getElementById("text").style.color = "blue";
+    document.getElementById("text").style.fontSize = "30px";
+}
+
+function exitProgram() {
+    document.getElementById("result").innerHTML =
+        "Program Exited";
+}
+</script>
+
+</body>
+</html>

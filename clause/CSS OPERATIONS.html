@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Operations</title>
+</head>
+<body>
+
+<h2 id="demo">DOM CSS Operations</h2>
+
+<button onclick="changeColor()">Change Color</button>
+<button onclick="increaseFont()">Increase Font Size</button>
+<button onclick="hideElement()">Hide Element</button>
+<button onclick="exitMenu()">Exit</button>
+
+<script>
+function changeColor() {
+    
+    document.getElementById("demo").style.color = "red";
+    document.getElementById("demo").style.color="green";
+}
+
+function increaseFont() {
+    document.getElementById("demo").style.fontSize = "40px";
+}
+
+function hideElement() {
+    document.getElementById("demo").style.display = "none";
+}
+
+function exitMenu() {
+    alert("Exit");
+}
+</script>
+
+</body>
+</html>
