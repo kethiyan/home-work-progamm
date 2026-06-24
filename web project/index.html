@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Speed Fibernet Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container" id="fibernetContainer">
+        <!-- Fibernet Router / Connection Unit -->
+        <div class="router-box" id="routerToggle" title="Click to Connect Fiber">
+            <div class="router-body">
+                <div class="antenna line-1"></div>
+                <div class="antenna line-2"></div>
+                <div class="router-lights">
+                    <span class="led power"></span>
+                    <span class="led internet"></span>
+                    <span class="led wifi"></span>
+                </div>
+            </div>
+            <div class="power-button"></div>
+            <!-- Glow effect representing high speed fiber beam -->
+            <div class="fiber-beam"></div>
+        </div>
+
+        <!-- Fibernet Login Form -->
+        <div class="login-form">
+            <div class="brand">
+                <h2>NEO<span>FIBER</span></h2>
+                <p>High-Speed Broadband Portal</p>
+            </div>
+            
+            <div class="input-group">
+                <label>Account ID / Username</label>
+                <input type="text" placeholder="e.g., NF-984321">
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" placeholder="••••••••">
+            </div>
+            
+            <button class="connect-btn">Connect to Internet</button>
+            <a href="#" class="forgot-link">Forgot Account Details?</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 public class Car {
 
     @Inject
-    private Engine engine;
+    public Engine engine;
 
     public void drive() {
         engine.start();

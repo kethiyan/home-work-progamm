@@ -9,9 +9,9 @@ html {
 }
 
 :root {
-    --bg: #050816;
+    --bg: #010414;
     --card: rgba(11, 16, 35, 0.6);
-    --text: #ffffff;
+    --text: #f3e9e9;
     --muted: #9fb3d1;
     --pink: #ff4fd8;
     --purple: #8b5cf6;
@@ -257,7 +257,7 @@ nav.nav-scrolled {
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: floatProfile 6s ease-in-out infinite, heroFadeIn 1s ease 0.3s both;
+    animation: floatProfile 6s step-start infinite, heroFadeIn 1s ease 0.3s both;
     flex-shrink: 0;
 }
 .avatar-ring {
@@ -303,7 +303,7 @@ nav.nav-scrolled {
 
 @keyframes floatProfile {
     0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(-20px); }
+    50%       { transform: translatey(-20px); }
 }
 @keyframes spinRing {
     from { transform: rotate(0deg); }
@@ -468,7 +468,7 @@ nav.nav-scrolled {
     color: var(--muted);
     font-size: 14px;
     font-weight: 500;
-    cursor: pointer;
+    cursor: var(--cyan);
     transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 .tab:hover, .tab.active {
