@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiber Installation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-header">
+        <h2>Dashboard</h2>
+        <button id="logoutBtn" class="btn-primary logout-btn">Logout</button>
+    </div>
+
+    <div class="dashboard-grid">
+        <a href="fiber-installation.html" class="dashboard-card active">Fiber Installation</a>
+        <a href="repair-ticket.html" class="dashboard-card">Network Repair</a>
+        <a href="job-status.html" class="dashboard-card">Job Status</a>
+        <a href="stock-list.html" class="dashboard-card">Stock List</a>
+    </div>
+
+    <div class="content-container">
+        <h3>Fiber Installation</h3>
+        <form id="fiberForm">
+            <div class="form-group">
+                <input type="text" id="customerName" placeholder="Customer Name" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="address" placeholder="Address" required>
+            </div>
+            <button type="submit" class="btn-primary">Submit</button>
+        </form>
+    </div>
+    <script src="js/fiber.js"></script>
+</body>
+</html>
