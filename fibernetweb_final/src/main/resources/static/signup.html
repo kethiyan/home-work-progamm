@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechField - Register</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .signup-link {
+            text-align: center;
+            margin-top: 15px;
+            color: #8892a4;
+            font-size: 0.9rem;
+        }
+        .signup-link a {
+            color: #10b981;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+        select {
+            width: 100%;
+            padding: 15px;
+            background-color: #121824;
+            border: 1px solid #232d42;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.3s ease;
+            appearance: none;
+            cursor: pointer;
+        }
+        select:focus {
+            border-color: #10b981;
+        }
+        select option {
+            background-color: #1c2333;
+            color: #fff;
+        }
+        .error-msg {
+            color: #ef4444;
+            font-size: 0.85rem;
+            margin-top: 6px;
+            display: none;
+        }
+        .success-msg {
+            color: #10b981;
+            text-align: center;
+            font-size: 0.95rem;
+            margin-top: 12px;
+            display: none;
+        }
+        .form-label {
+            display: block;
+            color: #8892a4;
+            font-size: 0.82rem;
+            margin-bottom: 6px;
+            letter-spacing: 0.03em;
+        }
+    </style>
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <h1>TechField</h1>
+        <p style="text-align:center; color:#8892a4; margin-bottom:28px; font-size:0.95rem;">Create Employee Account</p>
+
+        <form id="signupForm">
+            <div class="form-group">
+                <label class="form-label">Employee ID</label>
+                <input type="text" id="username" placeholder="e.g. TCH-001" required>
+                <span class="error-msg" id="usernameError">Employee ID is required.</span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+                <span class="error-msg" id="passwordError">Password must be at least 4 characters.</span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Re-enter password" required>
+                <span class="error-msg" id="confirmError">Passwords do not match.</span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Role</label>
+                <select id="role" required>
+                    <option value="" disabled selected>Select Role</option>
+                    <option value="TECHNICIAN">Technician</option>
+                    <option value="ADMIN">Admin</option>
+                    <option value="MANAGER">Manager</option>
+                </select>
+                <span class="error-msg" id="roleError">Please select a role.</span>
+            </div>
+
+            <button type="submit" class="btn-primary">Register</button>
+
+            <p class="success-msg" id="successMsg">✅ Registered successfully! Redirecting to login...</p>
+        </form>
+
+        <p class="signup-link">Already have an account? <a href="index.html">Login here</a></p>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const role = document.getElementById('role').value;
+
+            // Reset errors
+            document.querySelectorAll('.error-msg').forEach(el => el.style.display = 'none');
+
+            let valid = true;
+
+            if (!username) {
+                document.getElementById('usernameError').style.display = 'block';
+                valid = false;
+            }
+            if (password.length < 4) {
+                document.getElementById('passwordError').style.display = 'block';
+                valid = false;
+            }
+            if (password !== confirmPassword) {
+                document.getElementById('confirmError').style.display = 'block';
+                valid = false;
+            }
+            if (!role) {
+                document.getElementById('roleError').style.display = 'block';
+                valid = false;
+            }
+
+            if (!valid) return;
+
+            try {
+                const res = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password, role })
+                });
+
+                const data = await res.json();
+
+                if (res.ok) {
+                    document.getElementById('successMsg').style.display = 'block';
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 2000);
+                } else {
+                    alert(data.error || data.message || 'Registration failed. Try again.');
+                }
+            } catch (err) {
+                console.error('Register error:', err);
+                alert('Server error: ' + err.message);
+            }
+        });
+    </script>
+</body>
+</html>
